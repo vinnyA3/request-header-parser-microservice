@@ -12,10 +12,10 @@ app.use(function(req,res,next){
 
 //root route
 app.get('/',function(req,res){
-    console.log(process);
+    console.log(req.connection);
     res.send(JSON.stringify({
                 ipaddress: req.headers['x-forwarded-for'] ||  req.connection.remoteAddress,
-                language: process.env.LANG,
+                language: req.headers['accept-language'],
                 software: process.platform
             }, null, 4));
 });
