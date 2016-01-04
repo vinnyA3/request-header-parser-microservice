@@ -12,10 +12,12 @@ app.use(function(req,res,next){
 
 //root route
 app.get('/',function(req,res){
-    console.log(req.connection);
-    res.json({
-                ip: req.connection.remoteAddress    
-            });
+    console.log(process);
+    res.send(JSON.stringify({
+                ipaddress: req.headers['x-forwarded-for'] ||  req.connection.remoteAddress,
+                language: process.env.LANG,
+                software: process.platform
+            }, null, 4));
 });
 
 //listen on port
