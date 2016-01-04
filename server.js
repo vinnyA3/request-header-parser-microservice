@@ -17,7 +17,7 @@ app.get('/',function(req,res){
                 ipaddress: req.headers['x-forwarded-for'] ||  req.connection.remoteAddress,
                 language: req.headers['accept-language'],
                 software: process.platform
-            }, null, 4));
+            }, null, 3));
 });
 
 //listen on port
