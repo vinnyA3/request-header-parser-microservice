@@ -1,1 +1,1 @@
-An API Server that parses and returns specific headers(ip address, language, software).
+An API service that parses and returns specific headers(ip address, language, software).
